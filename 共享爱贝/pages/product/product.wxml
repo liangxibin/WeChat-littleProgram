@@ -1,0 +1,6 @@
+<!--pages/res.result/res.result.wxml-->
+<view>
+<text>{{result}}</text>
+
+</view>
+

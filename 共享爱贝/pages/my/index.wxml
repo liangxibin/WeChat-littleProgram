@@ -1,0 +1,28 @@
+<view class="container">
+	<view  bindtap="bindViewTap" class="userinfo">
+   <block wx:if="{{userInfo.avatarUrl != ''}}">
+		<image class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"></image>
+   </block>
+		<text class="userinfo-nickname">{{ userInfo.nickName }}</text>
+	</view>
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+<block wx:if="{{userInfo.avatarUrl!=''}}">
+  <view wx:if="{{!userMobile}}" class="my-item" style="border:none;padding-right:150rpx;width:auto;">
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">绑定手机号码</button>
+  </view>
+  <view wx:if="{{userMobile}}" class="my-item" style="border:none;padding-right:150rpx;width:auto;">
+    {{userMobile}}
+  </view>
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+  
+    <view class="my-wallet tapbar" bindtap="movetoWallet">
+      我的钱包
+    </view>
+  </block>
+  <view class="about" bindtap="aboutUs">
+    关于我们
+  </view>
+  <button bindtap="bindAction" class="btn-login" hover-class="gray" type="{{bType}}" >{{actionText}}</button>
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+  <view class="version">Powered by Shengtdz v {{version}}</view>
+</view>
